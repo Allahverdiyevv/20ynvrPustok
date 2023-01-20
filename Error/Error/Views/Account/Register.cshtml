@@ -1,0 +1,81 @@
+﻿@model MemberRegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+<div class="site-wrapper" id="top">
+
+	<section class="breadcrumb-section">
+		<h2 class="sr-only">Site Breadcrumb</h2>
+		<div class="container">
+			<div class="breadcrumb-contents">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+						<li class="breadcrumb-item active">Login</li>
+					</ol>
+				</nav>
+			</div>
+		</div>
+	</section>
+	<!--=============================================
+	=            Login Register page content         =
+	=============================================-->
+	<main class="page-section inner-page-sec-padding-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 mb--30 mb-lg--0">
+					<!-- Login Form s-->
+					<form asp-action="register" asp-controller="account" method="post">
+						<div class="login-form">
+							<h4 class="login-title">New Customer</h4>
+							<p><span class="font-weight-bold">I am a new customer</span></p>
+							<div class="row">
+								<div class="col-md-4 col-12 mb--15">
+									<label asp-for="Fullname">Full Name</label>
+									<input class="mb-0 form-control" asp-for="Fullname"  placeholder="FullName"
+										   placeholder="Enter your full name">
+								    <span asp-validation-for="Fullname" class="text-danger"></span>
+								</div>
+								<div class="col-md-4 col-12 mb--15">
+									<label asp-for="Username">Username</label>
+									<input class="mb-0 form-control" asp-for="Username" placeholder="Username"
+										   placeholder="Enter your Username">
+									<span asp-validation-for="Username" class="text-danger"></span>
+
+								</div>
+								<div class="col-md-4 col-12 mb--15">
+									<label asp-for="Email">Email</label>
+									<input class="mb-0 form-control" asp-for="Email" placeholder="Email"
+										   placeholder="Enter your Email">
+									<span asp-validation-for="Email" class="text-danger"></span>
+								</div>
+								<div class="col-md-6 col-12 mb--15">
+									<label asp-for="Pasword">Pasword</label>
+									<input class="mb-0 form-control" asp-for="Pasword" placeholder="Pasword"
+										   placeholder="Enter your Pasword">
+									<span asp-validation-for="Pasword" class="text-danger"></span>
+								</div>
+								<div class="col-md-6 col-12 mb--15">
+									<label asp-for="ConfirePasword">ConfirePasword</label>
+									<input class="mb-0 form-control" asp-for="ConfirePasword" placeholder="ConfirePasword"
+										   placeholder="Enter your ConfirePasword">
+									<span asp-validation-for="ConfirePasword" class="text-danger"></span>
+								</div>
+							
+								<div asp-validation-summary="ModelOnly" class="text-danager"></div>
+								<div class="col-md-12">
+									<button type="submit" class="btn btn-outlined">Register</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</main>
+</div>
+
+
